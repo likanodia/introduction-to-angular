@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { HousingLocation } from './housing-location'
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,6 +7,7 @@ import { HousingLocation } from './housing-location'
 })
 export class AppComponent {
   title = 'fairhouse';
+  selectedLocation: HousingLocation | undefined;
   housingLocationList: HousingLocation[] = [
     {
       name: "Acme Fresh Start Housing",
@@ -38,5 +38,7 @@ export class AppComponent {
     }
   ];
 
-  
+  updateSelectedLocation(location: HousingLocation) {
+    this.selectedLocation = location;
+  }
 }
